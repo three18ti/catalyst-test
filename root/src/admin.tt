@@ -6,12 +6,12 @@
 <table>
     <tr><th>Username</th><th>Name</th><th>Email</th><th>Roles</th></tr>
 
-    [% FOREACH user IN users -%]
+    [% WHILE (user = users.next) %]
         <tr>
             <td>[% user.username    %]</td>
             <td>[% user.name        %]</td>
             <td>[% user.email       %]</td>
-            <td>[% FOR role = user.roles.all -%][% role %], [% END %]</td>
+            <td>[% WHILE (role = user.roles.all) -%][% role %], [% END %]</td>
         </tr>
     [% END -%]
 </table>
