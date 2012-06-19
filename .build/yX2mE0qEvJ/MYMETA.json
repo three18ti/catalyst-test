@@ -1,0 +1,53 @@
+{
+   "abstract" : "Catalyst based application",
+   "author" : [
+      "jon <three18ti@gmail.com>"
+   ],
+   "dynamic_config" : 0,
+   "generated_by" : "Dist::Zilla version 4.300018, CPAN::Meta::Converter version 2.120921",
+   "license" : [
+      "perl_5"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "My",
+   "prereqs" : {
+      "build" : {
+         "requires" : {
+            "Catalyst::Test" : "0",
+            "Test::More" : "0"
+         }
+      },
+      "configure" : {
+         "requires" : {
+            "ExtUtils::MakeMaker" : "6.30"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "Catalyst" : "0",
+            "Catalyst::Controller" : "0",
+            "Catalyst::Model::DBIC::Schema" : "0",
+            "Catalyst::Runtime" : "5.80",
+            "Catalyst::View::TT" : "0",
+            "Config::Tiny" : "0",
+            "DBIx::Class::Core" : "0",
+            "DBIx::Class::Schema" : "0",
+            "List::MoreUtils" : "0",
+            "Moose" : "0",
+            "MooseX::MarkAsMethods" : "0",
+            "MooseX::NonMoose" : "0",
+            "Perl6::Junction" : "0",
+            "base" : "0",
+            "namespace::autoclean" : "0",
+            "strict" : "0",
+            "utf8" : "0",
+            "warnings" : "0"
+         }
+      }
+   },
+   "release_status" : "stable",
+   "version" : "0.001"
+}

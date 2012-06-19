@@ -1,4 +1,4 @@
-package My::Controller::Admin;
+package My::Controller::Logout;
 use Moose;
 use namespace::autoclean;
 
@@ -6,7 +6,7 @@ BEGIN {extends 'Catalyst::Controller'; }
 
 =head1 NAME
 
-My::Controller::Admin - Catalyst Controller
+My::Controller::Logout - Catalyst Controller
 
 =head1 DESCRIPTION
 
@@ -24,10 +24,11 @@ Catalyst Controller.
 sub index :Path :Args(0) {
     my ( $self, $c ) = @_;
 
-    $c->stash( 
-        users => [$c->model('DB::User')->search_rs],
-        template => 'admin.tt',
-    );
+    # Clear the user's state
+    $c->logout;
+   
+    # Send the user to the starting point
+    $c->response->redirect($c->uri_for('/'));
 }
 
 

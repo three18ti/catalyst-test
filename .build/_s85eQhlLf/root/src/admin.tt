@@ -1,0 +1,15 @@
+[% # This is a TT comment. -%]
+    
+[%- # Provide a title -%]
+[% META title = 'User List' -%]
+
+<table>
+    <tr><th>Username</th><th>Name</th></tr>
+
+    [% FOREACH user IN users -%]
+        <tr>
+            <td>[% user.username %]</td>
+            <td>[% user.name    %]</td>
+        </tr>
+    [% END -%]
+</table>
