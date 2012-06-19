@@ -11,8 +11,9 @@
             <td>[% user.username    %]</td>
             <td>[% user.name        %]</td>
             <td>[% user.email       %]</td>
-            [%- roles = user.roles.serch_rs() -%]
-            <td>[%- WHILE (role = roles.next) -%][% role %], [% END %]</td>
+            <td>Count: [% roles.count      %]<td>
+            [%- user_roles = user.user_roles.search_rs -%]
+            <td>[% WHILE (user_role = user_roles.next) %][% user_role.role.name %], [% END %]</td>
         </tr>
     [% END -%]
 </table>
