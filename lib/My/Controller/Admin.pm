@@ -25,7 +25,7 @@ sub index :Path :Args(0) {
     my ( $self, $c ) = @_;
 
     $c->stash( 
-        users => [$c->model('DB::User')->search_rs],
+        users => $c->model('DB')->resultset('User')->search_rs,
         template => 'admin.tt',
     );
 }

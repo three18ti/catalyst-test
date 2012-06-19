@@ -11,7 +11,8 @@
             <td>[% user.username    %]</td>
             <td>[% user.name        %]</td>
             <td>[% user.email       %]</td>
-            <td>[% WHILE (role = user.roles.all) -%][% role %], [% END %]</td>
+            [%- roles = user.roles.serch_rs() -%]
+            <td>[%- WHILE (role = roles.next) -%][% role %], [% END %]</td>
         </tr>
     [% END -%]
 </table>
