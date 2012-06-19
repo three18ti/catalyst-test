@@ -86,6 +86,7 @@ sub has_role {
     return any(map { $_->role } $self->roles) eq $role;
 }
 
+sub role_names { join q{, }, map { $_->name } shift->roles }
 
 __PACKAGE__->meta->make_immutable;
 1;
