@@ -1,0 +1,20 @@
+<h2>Add user</h2>
+<table>
+    <form name="input" action="/admin/add" method="post">
+        <tr>
+            <td>Full Name:</td><td><input type="text" name="name" /></td>
+        </tr>
+        <tr>
+            <td>Username:</td><td><input type="text" name="username" /></td>
+        </tr>
+        <tr>
+            <td>Email:</td><td><input type="text" name="email" /></td>
+        </tr>
+        <tr>
+            <td>Password:</td><td><input type="text" name="password" /></td>
+        </tr>
+        <tr>
+            <input type="submit" value="Submit" />
+        </tr>
+    </form>
+</table>

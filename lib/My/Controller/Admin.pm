@@ -30,6 +30,21 @@ sub index :Path :Args(0) {
     );
 }
 
+sub add :Local {
+    my ( $self, $c) = @_;
+
+    return 1 if $c->req->method ne 'POST';
+
+    $c->model('DB')->resultset('User')->create(
+        {
+            name        => $c->req->params->{'name'},
+            username    => $c->req->params->{'username'},
+            email       => $c->req->params->{'email'},
+            password    => $c->req->params->{'password'},
+        }
+    );
+}
+
 
 =head1 AUTHOR
 
