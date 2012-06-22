@@ -39,3 +39,14 @@
 .error {
     color: #f00;
 }
+
+input {
+    display: block;
+}
+select {
+    display: block;
+}
+.submit {
+    padding-top: .5em;
+    display: block;
+}

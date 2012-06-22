@@ -1,0 +1,34 @@
+---
+# indicator is the field that is used to test for form submission
+indicator: submit
+# Start listing the form elements
+elements:
+    # The first element will be a text field for the title
+    - type: Text
+      name: title
+      label: Title
+      # This is an optional 'mouse over' title pop-up
+      attributes:
+        title: Enter a book title here
+
+    # Another text field for the numeric rating
+    - type: Text
+      name: rating
+      label: Rating
+      attributes:
+        title: Enter a rating between 1 and 5 here
+
+# Add a drop-down list for the author selection.  Note that we will
+# dynamically fill in all the authors from the controller but we
+# could manually set items in the drop-list by adding this YAML code:
+# options:
+#   - [ '1', 'Bastien' ]
+#   - [ '2', 'Nasseh'  ]
+- type: Select
+  name: authors
+  label: Author
+
+# The submit button
+- type: Submit
+  name: submit
+  value: Submit

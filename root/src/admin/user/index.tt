@@ -16,5 +16,8 @@
         </tr>
     [% END -%]
 </table>
-
+<p>
+      HTML::FormFu:
+      <a href="[% c.uri_for(c.controller.action_for('formfu_create')) %]">Create</a>
+    </p>
 
