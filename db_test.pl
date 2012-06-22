@@ -5,9 +5,9 @@ use warnings;
 
 use lib 'lib';
 #use My;
-use My::Model::DB;
+use My::Schema;
 
-my $schema = My::Model::DB->new;
+my $schema = My::Schema->schema;
 
 foreach my $user ($schema->resultset('User')->all) {
     $user->update({ password => 'test123' });
