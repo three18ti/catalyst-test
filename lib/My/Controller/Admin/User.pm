@@ -34,7 +34,7 @@ Use HTML::FormFu to create a new user
     
 =cut
 
-sub formfu_create :Chained('/') :PathPart('formfu_create') :Args(0) :FormConfig {
+sub formfu_create :Local :Args(0) :FormConfig {
     my ($self, $c) = @_;
     
     # Get the form that the :FormConfig attribute saved in the stash
@@ -59,7 +59,7 @@ sub formfu_create :Chained('/') :PathPart('formfu_create') :Args(0) :FormConfig 
         
         # Create an array of arrayrefs where each arrayref is an author
         my @users;
-        foreach (sort {$a->last_name cmp $b->last_name} @user_objs) {
+        foreach (sort {$a->username cmp $b->username} @user_objs) {
             push @users, [$_->id, $_->username];
         }
 
