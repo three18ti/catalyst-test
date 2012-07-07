@@ -1,4 +1,4 @@
-<form name="create-user" action="/admin/user/create" method="POST" autocomplete="off">
+<form name="create-user" action="/admin/create" method="POST" autocomplete="off">
     <fieldset>
         <legend>Create User</legend>
 
