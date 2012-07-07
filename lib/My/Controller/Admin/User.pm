@@ -45,7 +45,7 @@ sub formfu_create :Local :Args(0) :FormConfig {
     # is shorthand for "$form->submitted && !$form->has_errors"
     if ($form->submitted_and_valid) {
         # Create a new book
-        my $user = $c->model('DB::USer')->new_result({});
+        my $user = $c->model('DB::User')->new_result({});
         # Save the form data for the book
         $form->model->update($user);
         # Set a status message for the user & return to books list
