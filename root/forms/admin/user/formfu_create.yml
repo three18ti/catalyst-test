@@ -24,9 +24,9 @@ elements:
 # options:
 #   - [ '1', 'Bastien' ]
 #   - [ '2', 'Nasseh'  ]
-#- type: Select
-#  name: authors
-#  label: Author
+- type: Select
+#  name: name
+#  label: name
 
 # The submit button
 #- type: Submit

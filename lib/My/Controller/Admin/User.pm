@@ -28,6 +28,36 @@ sub index :Path :Args(0) {
     );
 }
 
+sub find : Chained CaptureArgs(1) {
+    my ( $self, $c, $id, ) = @_;
+
+    my $rs = $c->moded('DB')->resultset('User');
+
+    $c->stash->{user} = $rs->find( $id );
+    
+    return;
+
+}
+
+sub edit : Chained('find') Args(0) FormConfig {
+    my ( $self, $c, $id ) = @_;
+
+    my $form = $c->stash->{form};
+    my $user = $c->stash->{user};
+
+    if ( $form->submitted_and_valid ) {
+
+        $form->model->update( $user );
+
+        $c->res->redirect( $c->uri_for( "/user/$id" ) );
+        return;
+    }
+
+    $form->model->default_values( $user )
+        if ! $form->submitted;
+
+}
+
 =head2 formfu_create
     
 Use HTML::FormFu to create a new user
